@@ -2,11 +2,28 @@ package studio8;
 
 import java.util.Scanner;
 
+public class SelectAllQuestion extends MultipleChoiceQuestion{
+
+	public SelectAllQuestion(String prompt, String answer, int points, String[] choices) {
+		super(prompt, answer, points, choices);
+		
+		
+	}
+	public void displayPrompt() {
+		System.out.println(this.getPrompt());
+		for(int i=0; i<choices.length;i++) {
+			System.out.print((i+1)+":");
+			System.out.println(this.choices[i]);
+		}
+	}
+	
+}
+
 public class MultipleChoiceQuestion extends Question {
 	
 	
 	
-	private String[] choices;
+	protected String[] choices;
 
 	public MultipleChoiceQuestion(String prompt, String answer, int points, String[] choices) {
 		//FIXME
